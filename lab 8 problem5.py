@@ -14,6 +14,22 @@ class character:
         return self. weaknesses
     def profile(self):
         return self.nickname, self.weapons, self. weaknesses
+    '''method '''
+    def check_equipment(self, taskL, state):
+        miss = 0
+        for item in range(len(taskL)):
+            if taskL[item] not in self.weapons:
+                print('{} is not ready'.format(taskL[item]))
+                miss += 1
+                
+        #outside a for loop
+        if miss == 0:
+           print('All items are prepared.')
+        if state in self.weaknesses:
+            print("Player's {} condition is not allowed")
+        else:
+            print("Player is in good condition")
+        
 
 player1 = character('','','')
 player1.nickname = 'Dragon Slayer'
